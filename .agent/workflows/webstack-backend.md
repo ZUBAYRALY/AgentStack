@@ -30,13 +30,13 @@ Before building or modifying backend code, always review:
   - Always enforce database-level constraints (foreign keys, uniqueness, not-null constraints).
   - Use database transactions for multi-step mutations.
   - Select only needed columns/fields; prevent N+1 query patterns.
-- **Defensive Security & Guardrails**:
-  - **SQL Injection Defense**: 100% parameterized ORM queries; strictly ban raw SQL string concatenation.
-  - **Secret Isolation**: Store all sensitive credentials, database URLs, and API tokens strictly in backend `.env` files.
-  - **Tenant Scoping**: Enforce workspace / user ownership checks on all read, update, and delete queries.
-  - **HTTP Hardening**: Use `helmet` for secure HTTP headers (CSP, X-Frame-Options, nosniff) and configure strict CORS origin whitelisting.
-  - **Rate Limiting**: Apply express-rate-limit on sensitive routes (auth, webhooks, expensive endpoints).
-  - **SSRF Blocker**: Disallow crawlers/scrapers from making requests to private internal network IPs (`127.0.0.1`, `10.x`, `192.168.x`).
+- **Security & Guardrails**:
+  - Store all sensitive credentials, API keys, and connection strings strictly in backend environment variables (`.env`). Never leak secrets to client bundles.
+  - Implement parameterized ORM queries (Prisma / Drizzle); never concatenate raw SQL strings.
+  - Protect authentication cookies with `httpOnly: true`, `secure: true`, and `sameSite: "lax"`.
+  - Block SSRF by preventing external HTTP fetchers from calling private/loopback IP ranges (`127.0.0.1`, `10.0.0.0/8`, `192.168.0.0/16`, `169.254.169.254`).
+  - Implement rate limiting and explicit origin CORS policies in production.
+  - Scope all queries by authenticated tenant / `userId`.
 
 ---
 

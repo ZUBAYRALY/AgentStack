@@ -72,10 +72,21 @@
 
 ## 4. Non-Functional Requirements
 
-- **Performance**: Standard API responses < 500ms; frontend initial load < 2 seconds.
-- **Reliability**: Graceful error handling; no unhandled crashes; explicit error messages on failure.
-- **Security**: Strict environment variable isolation for all secrets; input sanitization; SQL injection & XSS prevention.
-- **Responsiveness**: Pixel-perfect usability across Mobile, Tablet, Laptop, and Desktop.
+### 4.1 Performance & Resource Targets
+- **Web**: Standard API responses < 300-500ms; frontend initial page load < 1.8s; zero layout shifts (CLS < 0.1).
+- **Mobile (Android)**: Cold app startup < 1.5s; 60-120fps smooth scrolling with zero frame drops; memory footprint optimized for 3-4 GB RAM devices.
+- **Python Services**: Async non-blocking I/O; sub-200ms serialization for standard JSON endpoints.
+
+### 4.2 Security & Data Integrity
+- **Credential Protection**: Zero secrets in source code or client bundles. `.env` and `local.properties` strictly ignored in version control.
+- **Transport Security**: Mandatory TLS 1.2/1.3. Android enforces `android:usesCleartextTraffic="false"`.
+- **Injection Shields**: 100% parameterized queries (Prisma, async SQLAlchemy, Room). Complete schema validation via Zod / Pydantic.
+- **Storage Safety**: Passwords hashed with `bcrypt`/`argon2`. Mobile tokens encrypted with `EncryptedSharedPreferences`. Android backup disabled (`android:allowBackup="false"`).
+- **Network Boundaries**: SSRF defense blocking private IP probing. Explicit CORS policies in production.
+
+### 4.3 Reliability & Usability
+- **Honest State Handling**: Clear, resilient states for Loading, Empty, Error (with retry trigger), and Content.
+- **Multi-Device Responsiveness**: Verified seamless layouts across Mobile, Tablet, Laptop, and Desktop viewports.
 
 ---
 

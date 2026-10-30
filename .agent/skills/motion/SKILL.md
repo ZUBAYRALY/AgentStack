@@ -45,6 +45,13 @@ import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "mot
 
 ---
 
+## 📚 Reference Guides & Documentation
+- 📖 **API & Spring Cheatsheet**: [api-cheatsheet.md](./references/api-cheatsheet.md)
+- 🔄 **Migration Guide (Framer Motion → Motion v11+)**: [migration-guide.md](./references/migration-guide.md)
+- 🌐 **Official Repository**: [github.com/motiondivision/motion](https://github.com/motiondivision/motion)
+
+---
+
 ## 🎨 Essential Animation Patterns
 
 ### 1. Interactive Buttons & Clickables

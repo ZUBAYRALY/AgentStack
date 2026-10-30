@@ -1,15 +1,15 @@
 # 🎨 Design System & UI Specification (Design.md)
 
 **Project Name**: `[Project Name]`  
-**Theme**: Deep OLED Dark Mode & Clean Modern Light Mode (SaaS Standard)  
-**Design Intelligence Engine**: `ui-ux-pro-max` Skill (`.agent/skills/ui-ux-pro-max`)  
-**Animation & Interaction Engine**: `motion` Skill (`.agent/skills/motion`)
-
-> 💡 **Design & Motion Rules**: Use `ui-ux-pro-max` for styles, fonts, and palettes. Use `motion` for spring physics (`whileHover`, `whileTap`), `AnimatePresence` exit transitions, and `layoutId` pill indicators.
+**Theme**: Deep OLED Dark Mode & Clean Modern Light Mode (SaaS Standard)
 
 ---
 
 ## 1. Core Design Principles
+
+### Integrated Design Skills
+- 🎨 **[ui-ux-pro-max](../skills/ui-ux-pro-max/SKILL.md)**: Comprehensive design intelligence across 13 tech stacks (including `html-tailwind`, `nextjs`, `react`, and `jetpack-compose` for Android).
+- 🪄 **[motion](../skills/motion/SKILL.md)**: Web animation intelligence, spring physics, and gesture feedback (`motion/react` for Web).
 
 ### What to Build
 - **Clean Information Hierarchy**: High readability, distinct font weights, and predictable layout structures.
@@ -86,3 +86,24 @@ Centralize components in `frontend/src/components/`:
 - **Mobile (<640px)**: 100% full-width cards, stackable metric columns, slide-over navigation.
 - **Tablet (640-1024px)**: 2-column metric grids, horizontally scrollable data tables.
 - **Desktop (>1024px)**: Multi-column dashboard layouts, fixed sidebars, zero unintended horizontal scroll.
+
+---
+
+## 6. Android Material 3 UI Tokens (Droid Standard)
+
+### Material 3 Color Roles
+- **Primary / OnPrimary**: `MaterialTheme.colorScheme.primary` / `onPrimary`
+- **Surface / Background**: `MaterialTheme.colorScheme.surface` / `background`
+- **Surface Container (Cards)**: `MaterialTheme.colorScheme.surfaceContainer` / `surfaceVariant`
+- **Outlines / Dividers**: `MaterialTheme.colorScheme.outlineVariant`
+- **Error**: `MaterialTheme.colorScheme.error` / `onError`
+
+### Dynamic Color & Dark Mode
+- Support dynamic theming on Android 12+ (`dynamicDarkColorScheme` / `dynamicLightColorScheme`).
+- Fallback to branded deep OLED dark and clean light schemes on older Android versions.
+
+### Android Reusable Primitives (`app/src/main/java/.../ui/components`)
+- `AppTopBar`: Slot-based TopAppBar with back navigation and action icons.
+- `AppBottomNavBar`: NavigationBar with icons and badges.
+- `StateContainer`: Composable handling Loading skeleton, Empty with CTA, Error with Retry, and Content.
+- `PrimaryButton`: FilledButton / OutlinedButton adhering to Material 3 elevation and shape tokens.

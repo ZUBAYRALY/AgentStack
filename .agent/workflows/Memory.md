@@ -6,18 +6,21 @@ This document maintains persistent system context, current execution focus, and 
 
 ## 1. Project Identity & Overview
 - **Project Name**: `[Project Name — Waiting for User Initial Specification]`
+- **Platform Scope**: `[Web (webstack.md) | Android App (droid.md) | Python API/CLI (python.md) | Full-Stack]`
 - **Primary Goal**: `[Brief statement of what this project accomplishes]`
 - **Primary Tech Stack**:
-  - **Frontend**: `[e.g., React 18 / Next.js + TailwindCSS + Vite]`
-  - **Backend**: `[e.g., Node.js (Express) + TypeScript]`
-  - **Database**: `[e.g., PostgreSQL + Prisma ORM]`
-- **Master Reference**: `[Link to PRD.md or project specification]`
+  - **Web Frontend**: `[e.g., React 18 / Next.js + TailwindCSS + Vite]`
+  - **Android Mobile**: `[e.g., Kotlin + Jetpack Compose + Material 3 + Room + Hilt]`
+  - **Python Backend / Tooling**: `[e.g., Python 3.11+ + FastAPI + Pydantic v2 + Async SQLAlchemy]`
+  - **Database / Local Storage**: `[e.g., PostgreSQL + Async SQLAlchemy / Prisma ORM | Room DB (Android)]`
+- **Master Reference**: `[PRD.md](./PRD.md)` | `[webstack.md](./webstack.md)` | `[droid.md](./droid.md)` | `[python.md](./python.md)`
 
 ---
 
 ## 2. System Status & Active Runtime
 - **Frontend Status**: `[Not Started / Active at http://localhost:...]`
-- **Backend Status**: `[Not Started / Active at http://localhost:...]`
+- **Android App Status**: `[Not Started / Ready to build / Running on Emulator or Physical Device]`
+- **Python / Backend Status**: `[Not Started / Virtualenv ready / Active at http://localhost:8000]`
 - **Database Status**: `[Not Started / Synced with database]`
 - **Active Workspace**: `[Default Workspace]`
 
@@ -39,9 +42,11 @@ This document maintains persistent system context, current execution focus, and 
 ---
 
 ## 5. Key Decisions & Architectural Notes
-- System follows universal WebStack rules (Automatic memory sync, full file outputs, zero dummy data, zero code comments, no unauthorized automatic commands).
-- Full OLED Dark Mode and Clean Light Mode supported by design tokens.
-- Structured REST JSON responses with Zod validation.
+- System follows universal WebStack, Droid & Python rules (Automatic memory sync, full file outputs, zero dummy data, zero code comments, targeted edits, no unauthorized automatic commands).
+- Web: Full OLED Dark Mode and Clean Light Mode supported by design tokens.
+- Android: Material 3 dynamic color scheme, Clean Architecture (UDF), Room offline-first persistence, and Baseline Profile optimization.
+- Python: FastAPI async endpoints, Pydantic v2 schemas, SQLAlchemy 2.0 repository pattern, and Pytest-asyncio testing.
+- Structured REST JSON responses with Zod / Pydantic validation.
 
 ---
 

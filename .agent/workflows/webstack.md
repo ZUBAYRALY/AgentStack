@@ -67,6 +67,14 @@ Before executing any task, planning changes, or generating code, always consult 
 ## 📱 Specialized Workflow Protocols
 - 👉 **Frontend Specifics**: **[webstack-frontend.md](./webstack-frontend.md)**
 - 👉 **Backend Specifics**: **[webstack-backend.md](./webstack-backend.md)**
+- 👉 **Android Mobile Specifics**: **[droid.md](./droid.md)** (for Android Jetpack Compose projects)
+
+---
+
+## 🧩 Integrated Web Skills
+- 🎨 **[ui-ux-pro-max](../skills/ui-ux-pro-max/SKILL.md)**: Web design systems, palettes, typography, and UX guidelines (`nextjs`, `react`, `html-tailwind`).
+- 🪄 **[motion](../skills/motion/SKILL.md)**: Web animation intelligence, spring physics, and micro-interactions (`motion/react`).
+- 🔍 **[seo](../skills/seo/SKILL.md)**: Technical SEO, Schema.org markup, XML sitemaps, and Core Web Vitals (Web exclusive).
 
 ---
 

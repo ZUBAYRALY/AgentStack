@@ -33,7 +33,8 @@ When the user runs `/project` or introduces a new project idea, the AI **MUST** 
 │    • Architecture.md (Tech stack, diagrams, directories)    │
 │    • Phases.md (Build milestones roadmap)                   │
 │    • Memory.md (Project name, active focus, telemetry)      │
-│  - Begin development according to webstack.md protocols!    │
+│  - Begin development according to webstack.md (Web),        │
+│    droid.md (Android), or python.md (Python) protocols!     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -71,55 +72,6 @@ The AI will transition from Stage 1 to Stage 2 **ONLY** when the user explicitly
 
 ---
 
-## 🔍 MODE B: Existing Project Audit & Workflow Adoption Protocol
-
-When `/project` is run in an **existing codebase** (a project you have already built or partially built), or when the user says *"Scan this existing project"* / *"Adopt workflow on this project"*:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  STEP 1: Autonomous Codebase Audit                          │
-│  - Inspect package.json / requirements.txt / configs        │
-│  - Scan directory structure (frontend, backend, schemas)    │
-│  - Identify implemented database models & tables            │
-│  - Identify implemented API routes, controllers & services  │
-│  - Identify implemented frontend pages, components & routes │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│  STEP 2: Auto-Synchronize All Workflow Files                │
-│  - Architecture.md: Populate with actual tech stack & tree  │
-│  - PRD.md: Reconstruct active feature modules & models      │
-│  - done.md: Mark all existing working endpoints & pages [x] │
-│  - Phases.md: Check off completed phases [x] and set the    │
-│    exact current active phase milestone                     │
-│  - Memory.md: Log runtime status, active state, & focus     │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│  STEP 3: Executive Briefing & Actionable Next Steps         │
-│  - Report back to user with a complete status audit:        │
-│    "Project scanned successfully! Found X pages, Y APIs.    │
-│     All workflow files are updated. We are at Phase Z.      │
-│     What should we build or fix next?"                      │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Existing Project Audit Checklist:
-1. **Tech Stack Detection**:
-   - Determine exact frontend (React, Next.js, Vue, Tailwind, etc.) and backend (Express, Fastify, Python, etc.).
-   - Determine database engine (PostgreSQL, MySQL, MongoDB, SQLite) and ORM (Prisma, Drizzle, etc.).
-2. **Feature Inventory**:
-   - List every working page in `frontend/src/pages/`.
-   - List every working API endpoint in `backend/src/routes/` or controllers.
-3. **Synchronization**:
-   - Immediately update **[Architecture.md](./Architecture.md)**, **[PRD.md](./PRD.md)**, **[done.md](./done.md)**, **[Phases.md](./Phases.md)**, and **[Memory.md](./Memory.md)**.
-4. **Immediate Readiness**:
-   - System is now fully primed with persistent context, ready to continue building seamlessly without breaking existing code.
-
----
-
 # 📋 Active Project Draft (Live Workspace)
 
 *(This section is maintained during Stage 1 discussion and locked during Stage 2)*
@@ -135,11 +87,13 @@ When `/project` is run in an **existing codebase** (a project you have already b
 - **Our Solution**: `[How does this software solve it?]`
 
 ### 3. Agreed Tech Stack
-- **Frontend**: `[e.g., React (Vite) / Next.js / Vue + TailwindCSS]`
-- **Backend**: `[e.g., Node.js (Express / Fastify) / Python (FastAPI)]`
-- **Database**: `[e.g., PostgreSQL / MySQL / MongoDB + Prisma ORM]`
-- **Auth / Security**: `[e.g., JWT / NextAuth / Session-based / Direct Access]`
-- **Key Third-Party APIs / Tools**: `[e.g., Stripe, SendGrid, AI APIs, etc.]`
+- **Target Platform**: `[Web (webstack.md) | Android Mobile (droid.md) | Python API/CLI (python.md) | Full-Stack]`
+- **Frontend / Client**: `[e.g., React (Vite) / Next.js / Vue + TailwindCSS OR Android Kotlin + Jetpack Compose + Material 3]`
+- **Backend / API / Runtime**: `[e.g., Python (FastAPI / Pydantic / AsyncIO) OR Node.js (Express / Fastify) / Ktor]`
+- **Database / Local Storage**: `[e.g., PostgreSQL + Async SQLAlchemy / Alembic OR Prisma ORM OR Room DB (Android)]`
+- **Architecture / State**: `[e.g., Clean Architecture (API/Service/Repo) OR MVVM/MVI + StateFlow OR Zustand/Context]`
+- **Auth / Security**: `[e.g., JWT / OAuth2 / NextAuth / EncryptedSharedPreferences]`
+- **Key Third-Party APIs / Tools**: `[e.g., httpx, Pydantic v2, Stripe, SendGrid, AI APIs, Coil, Retrofit, etc.]`
 
 ### 4. MVP Feature Breakdown (Agreed Must-Haves)
 - **Feature 1**: `[Description & key user interactions]`

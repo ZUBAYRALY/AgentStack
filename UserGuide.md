@@ -1,6 +1,6 @@
 # 📖 AgentStack — Complete User Guide
 
-Welcome to the **AgentStack** comprehensive user guide. This document details how to initialize, configure, and operate the autonomous workflow and skills framework across any web development project.
+Welcome to the **AgentStack** comprehensive user guide. This document details how to initialize, configure, and operate the autonomous multi-ecosystem workflow and skills framework across Web, Python, and Android development.
 
 ---
 
@@ -9,159 +9,209 @@ Welcome to the **AgentStack** comprehensive user guide. This document details ho
 2. [Installation & Setup](#2-installation--setup)
 3. [Starting a Fresh Project (`/project`)](#3-starting-a-fresh-project-project)
 4. [Adopting an Existing Codebase](#4-adopting-an-existing-codebase)
-5. [The Multi-Disciplinary Skills Engine](#5-the-multi-disciplinary-skills-engine)
-   - [UI/UX Pro Max](#uiux-pro-max-design-intelligence)
-   - [Motion (Spring Animations)](#motion-tactile-micro-interactions)
-   - [Claude-SEO (Technical SEO & Schemas)](#claude-seo-technical-seo--aeo)
-6. [Defensive Security by Design](#6-defensive-security-by-design)
-7. [Persistent Memory & Task Audit Protocol](#7-persistent-memory--task-audit-protocol)
-8. [Maintenance & Updating Skills](#8-maintenance--updating-skills)
+5. [Ecosystem Protocols & Workflows](#5-ecosystem-protocols--workflows)
+   - [Full-Stack Web (`webstack`)](#full-stack-web-webstack)
+   - [Modern Python & FastAPI (`python`)](#modern-python--fastapi-python)
+   - [Android & Jetpack Compose (`droid`)](#android--jetpack-compose-droid)
+6. [The Companion Skills Engine](#6-the-companion-skills-engine)
+   - [UI/UX Pro Max (Design Intelligence)](#uiux-pro-max-design-intelligence)
+   - [Motion (Tactile Spring Animations)](#motion-tactile-micro-interactions)
+   - [Claude-SEO (Technical SEO & AEO)](#claude-seo-technical-seo--aeo)
+7. [Defensive Security by Design](#7-defensive-security-by-design)
+8. [Persistent Memory & Task Audit Protocol](#8-persistent-memory--task-audit-protocol)
+9. [Maintenance & Updating Skills](#9-maintenance--updating-skills)
+10. [Support the Developer](#10-support-the-developer)
 
 ---
 
 ## 1. Overview & Core Philosophy
 
-**AgentStack** solves the core problems developers face when using AI coding assistants:
-- **No Hallucinations / Fake Data**: Elements render real database data or explicit empty states.
-- **Strict Two-Stage Gating**: Prevents the AI from impulsively writing code before requirements and architecture are fully locked.
-- **Autonomous Multi-Layer Standards**: Visual design, micro-interactions, technical SEO, and defensive security are applied automatically without having to prompt each one individually.
-- **Self-Healing Persistent Memory**: Tracks active progress across turns, preserving context indefinitely.
+**AgentStack** solves the key frustrations developers experience with AI coding assistants:
+- **No Hallucinations / Fake Data**: All UI elements connect to real database models or present explicit empty states. Hardcoded dummy metrics are strictly forbidden.
+- **Strict Two-Stage Gating**: Eliminates impulsive AI coding before architectural and feature specs are fully agreed upon.
+- **Multi-Ecosystem Specialization**: Dedicated architectures and conventions for Web (Next.js/React), Python (FastAPI/SQLAlchemy), and Android (Kotlin/Compose).
+- **Autonomous Multi-Layer Standards**: Visual styling, tactile micro-interactions, technical SEO, and defense-in-depth security are executed automatically.
+- **Self-Healing Persistent Memory**: Context and finished tasks are synchronized across every step in `Memory.md`, `done.md`, and `Phases.md`.
 
 ---
 
 ## 2. Installation & Setup
 
 ### For a New Project:
-1. Initialize a new folder or repository for your project.
+1. Initialize a new folder or repository for your application.
 2. Copy the `.agent/` folder into your project root:
    ```bash
+   # Linux/macOS
    cp -r /path/to/AgentStack/.agent /path/to/my-new-project/
+
+   # Windows PowerShell
+   Copy-Item -Recurse -Force AgentStack\.agent \path\to\my-new-project\
    ```
-3. Open the folder in **Google Antigravity IDE**, **Claude Code**, or **Cursor**.
+3. Open the directory in **Google Antigravity IDE**, **Claude Code**, or **Cursor**.
 
 ### For an Existing Project:
-1. Paste the `.agent/` folder into your existing repository root.
-2. See [Adopting an Existing Codebase](#4-adopting-an-existing-codebase) below.
+1. Paste the `.agent/` directory directly into your existing project root.
+2. Follow the [Adopting an Existing Codebase](#4-adopting-an-existing-codebase) workflow below.
 
 ---
 
 ## 3. Starting a Fresh Project (`/project`)
 
-When starting a project from scratch, invoke the slash command:
+When initiating a project from scratch, type:
 ```bash
 /project
 ```
 
 ### Stage 1: Brainstorming & Ideation (Sandbox Mode)
-- The AI will welcome you to the brainstorming session.
-- You can freely discuss ideas, target audience, feature requirements, and preferred tech stacks.
-- **Gating Rule**: During Stage 1, the AI is **strictly forbidden** from writing code or editing `PRD.md`, `Architecture.md`, `Phases.md`, or `Memory.md`. All notes remain isolated in `project.md`.
+- The AI initializes the brainstorming session inside `project.md`.
+- Freely discuss goals, feature requirements, user personas, and target platforms.
+- **Strict Gating Rule**: During Stage 1, the AI is **strictly prohibited** from generating application code or modifying core tracking files (`PRD.md`, `Architecture.md`, `Phases.md`, `Memory.md`).
 
 ### Stage 2: Kickoff Trigger
-When you are satisfied with the discussion, give the explicit command:
-> *"Specs finalize hain, kaam shuru karo!"* or *"Let's build this!"*
+When you are ready to start coding, give the trigger:
+> *"Specs finalize hain, kaam shuru karo!"* or *"Specs finalized, begin Phase 1!"*
 
-The AI will automatically:
-1. Populate **`PRD.md`** with user personas and modular feature requirements.
-2. Configure **`Architecture.md`** with tech stack diagrams and directory structure.
-3. Establish **`Phases.md`** with a 7-phase build order.
-4. Update **`Memory.md`** with active focus.
-5. Begin executing Phase 1 foundation code.
+The AI autonomously:
+1. Translates requirements into modular epics in **`PRD.md`**.
+2. Establishes directory structure, data models, and system flows in **`Architecture.md`**.
+3. Creates a 7-phase implementation checklist in **`Phases.md`**.
+4. Initializes runtime ports and focus tracking in **`Memory.md`**.
+5. Begins writing foundation code for Phase 1.
 
 ---
 
 ## 4. Adopting an Existing Codebase
 
-If you drop `.agent/` into a project with existing code, simply run:
-```bash
-/project
-```
-*(Or prompt: "Scan this existing project and adopt AgentStack workflow.")*
+To bring AgentStack into an existing application, simply run `/project` or prompt:
+> *"Audit this existing project and adopt AgentStack workflow."*
 
-### The Autonomous 3-Step Audit:
+### Autonomous 3-Step Audit:
 1. **Codebase Scan**:
-   - Inspects `package.json` / `requirements.txt` to detect tech stacks (React, Next.js, Express, Prisma, Tailwind).
-   - Scans database schemas to map models and relations.
-   - Enumerate implemented API routes, controllers, and services.
-   - Enumerates existing frontend pages and interactive views.
+   - Inspects package definitions (`package.json`, `pyproject.toml`, `requirements.txt`, `build.gradle.kts`).
+   - Maps out database schemas (Prisma, SQLAlchemy, Room).
+   - Enumerates implemented API endpoints, controllers, and services.
+   - Discovers frontend views, navigation routes, and Composables.
 2. **Auto-Synchronization**:
-   - Updates **`Architecture.md`** with your actual directory layout.
-   - Reconstructs **`PRD.md`** based on implemented features.
-   - Marks existing working endpoints and views as `[x]` in **`done.md`**.
-   - Checks off finished phases in **`Phases.md`** and positions the **Current Active Phase** at your exact active milestone.
-   - Sets runtime ports and active state in **`Memory.md`**.
+   - Updates **`Architecture.md`** with the detected directory layout and tech stack.
+   - Reconstructs **`PRD.md`** around existing capabilities.
+   - Marks verified working endpoints and views as `[x]` in **`done.md`**.
+   - Identifies completed phases in **`Phases.md`** and aligns the active phase indicator.
+   - Records runtime ports, server environments, and database URLs in **`Memory.md`**.
 3. **Executive Briefing**:
-   - Returns a concise summary: *"Scan complete! Detected 12 pages and 18 API routes. We are currently at Phase 5. What should we build or fix next?"*
+   - Delivers a concise status report: *"Audit complete! Detected 14 routes and 8 models. Currently at Phase 4. What would you like to build or optimize next?"*
 
 ---
 
-## 5. The Multi-Disciplinary Skills Engine
+## 5. Ecosystem Protocols & Workflows
+
+AgentStack features specialized, production-hardened workflows for major engineering environments:
+
+### Full-Stack Web (`webstack`)
+- **Governing Workflows**: `webstack.md`, `webstack-frontend.md`, `webstack-backend.md`.
+- **Frontend Standards**:
+  - React 18+ and Next.js (App Router preferred).
+  - Tailwind CSS with OLED dark and crisp light theme tokens (`Design.md`).
+  - Tactile micro-interactions on all interactive elements via `motion/react`.
+  - Semantic HTML landmarks (`<main>`, single `<h1>`, `<header>`, `<nav>`).
+- **Backend Standards**:
+  - Express.js or Fastify with TypeScript.
+  - Prisma ORM or Drizzle with PostgreSQL.
+  - Strict input validation via Zod schemas.
+  - Zero-dummy UI: All screens bind to real backend responses with explicit handling of `Loading`, `Empty`, `Error (with Retry)`, and `Content`.
+
+### Modern Python & FastAPI (`python`)
+- **Governing Workflows**: `python.md`, `python-architecture.md`, `python-api.md`.
+- **Async-First Execution**:
+  - Python 3.11+ using native `async` / `await` for all database, HTTP, and file I/O.
+  - Blocking synchronous calls inside async event loops are strictly prohibited.
+- **Clean Layered Architecture**:
+  - **Routers (`api/v1/`)**: HTTP routing, status codes, and Pydantic v2 serialization.
+  - **Services (`services/`)**: Business logic, domain rules, and transaction boundaries.
+  - **Repositories (`repositories/`)**: Async SQLAlchemy 2.0 database queries and model mapping.
+- **Type Safety**: Full PEP 484 type annotations on all signatures and union types (`str | None`).
+
+### Android & Jetpack Compose (`droid`)
+- **Governing Workflows**: `droid.md`, `droid-architecture.md`, `droid-ui.md`, `baseline-profile.md`.
+- **Clean Architecture + UDF**:
+  - Single immutable `UiState` flows down from ViewModel to Compose screens.
+  - Events flow up via typed lambda callbacks (`onEvent: (TaskUiEvent) -> Unit`).
+  - One-off navigation and snackbar events use `Channel<UiNavEvent>` with `receiveAsFlow()`.
+- **Performance & Zero Jank**:
+  - Lifecycle-aware state collection via `collectAsStateWithLifecycle()`.
+  - Stable keys for all virtualized lists (`LazyColumn(items, key = { it.id })`).
+  - Baseline Profiles and Macrobenchmark automation for instantaneous app startup.
+- **Persistence & Networking**:
+  - Single Source of Truth (SSOT): Room database `Flow` drives the UI.
+  - Retrofit + OkHttp with Coroutines for backend communication.
+  - Hilt dependency injection for clean modularization.
+
+---
+
+## 6. The Companion Skills Engine
 
 ### UI/UX Pro Max (Design Intelligence)
 Located in `.agent/skills/ui-ux-pro-max/`:
-- Contains 67+ styles, 96 color palettes, 57 font pairings, and UX reasoning rules.
-- **Autonomous Trigger**: When creating any UI, the AI queries the design database:
+- **67+ Curated UI Styles** (Minimal, Clean Dark, Glassmorphism, Brutalism, Flat, Modern SaaS).
+- **96 Accessible Color Palettes** with WCAG contrast verification.
+- **57 Google Font Pairings** tailored to SaaS, Fintech, E-Commerce, DevTools, and Mobile.
+- **Search CLI**:
   ```bash
-  python .agent/skills/ui-ux-pro-max/scripts/search.py "<product_type> <industry> <keywords>" --design-system
+  python .agent/skills/ui-ux-pro-max/scripts/search.py "<domain> <industry> <keywords>" --design-system
   ```
-- Generates exact color tokens, Google Font pairings, and avoids layout anti-patterns.
 
 ### Motion (Tactile Micro-Interactions)
 Located in `.agent/skills/motion/`:
-- Powered by `motion/react`.
-- **Spring Physics**: Buttons and clickables receive tactile physics feedback (`whileHover={{ scale: 1.02 }}`, `whileTap={{ scale: 0.98 }}`).
-- **Smooth Exits**: Modals, drawers, and toasts use `<AnimatePresence>` for smooth exit animations.
-- **Layout Animations**: Segmented controls and tab bars use `layoutId` for sliding indicators.
-- **Reduced Motion**: Automatically complies with `prefers-reduced-motion`.
+- Powered by `motion/react` (Motion 12).
+- **Spring Feedback**: Tactile physics on all interactive elements (`whileHover={{ scale: 1.02 }}`, `whileTap={{ scale: 0.98 }}`).
+- **Exit Orchestration**: Smooth modal, drawer, and notification exit transitions via `<AnimatePresence>`.
+- **Layout Morphing**: Sliding indicators and tabs with `layoutId`.
+- **Accessibility**: Strict compliance with `prefers-reduced-motion`.
 
 ### Claude-SEO (Technical SEO & AEO)
 Located in `.agent/skills/seo/`:
-- Contains 24 sub-skills for technical SEO, schema, sitemaps, Core Web Vitals, and GEO/AEO.
-- **Automatic Enforcement**:
-  - Enforces semantic HTML with a single `<h1>` per page and proper `<main>`, `<header>`, `<nav>` landmarks.
-  - Automatically generates optimized `<title>`, `<meta description>`, OpenGraph, and Twitter Cards.
-  - Generates Schema.org JSON-LD structured data (WebSite, Organization, BreadcrumbList, Product).
-  - Ensures images have descriptive `alt` tags and explicit dimensions to prevent CLS.
+- Comprehensive suite with **24 specialized sub-skills**.
+- **Automated Schema Generation**: WebSite, Organization, Article, BreadcrumbList, and Product JSON-LD structured data.
+- **Core Web Vitals**: Image dimension constraints and layout shift (CLS) prevention.
+- **GEO / AI Engine Optimization**: Structured markup designed for Google AI Overviews, ChatGPT Search, and Perplexity discovery.
 
 ---
 
-## 6. Defensive Security by Design
+## 7. Defensive Security by Design
 
-Governed by **`Rules.md`** and **`webstack-backend.md`**:
-- **SQL / NoSQL Injection Defense**: 100% Parameterized ORM queries (Prisma/Drizzle); raw string concatenation is strictly banned.
-- **XSS Defense**: `dangerouslySetInnerHTML` is prohibited unless sanitized via DOMPurify.
-- **Broken Access Control**: Every read/write query strictly verifies tenant/user scoping (`where: { id, workspaceId }`).
-- **HTTP Hardening**: Helmet CSP, secure headers, and strict CORS origin whitelisting.
-- **SSRF Blocker**: Disallows crawlers from querying private IP ranges (`127.0.0.1`, `10.x`, `192.168.x`).
-- **Secret Isolation**: All credentials and API keys are stored strictly in backend `.env` files.
+Governed by `Rules.md`, `webstack-backend.md`, and `python-architecture.md`:
+- **Injection Defense**: 100% Parameterized queries across Prisma, SQLAlchemy, and Room. String interpolation in queries is strictly prohibited.
+- **Cross-Site Scripting (XSS)**: Direct assignment to `dangerouslySetInnerHTML` is prohibited unless sanitized with DOMPurify.
+- **Authorization & Multi-Tenancy**: Every data mutation verifies tenant and user ownership (`where: { id, tenantId }`).
+- **HTTP Hardening**: Content Security Policy (CSP), rate limiting, and private IP range blocking against SSRF attacks.
+- **Secret Isolation**: Zero hardcoded secrets; environment variables reside strictly in backend `.env` files.
 
 ---
 
-## 7. Persistent Memory & Task Audit Protocol
+## 8. Persistent Memory & Task Audit Protocol
 
-AgentStack follows the **Automatic Sync Protocol**:
-- After **every** feature, endpoint, bug fix, or milestone, the AI automatically updates:
-  - **`Memory.md`**: Current system status, active focus, and runtime telemetry.
+AgentStack runs on the **Automatic Sync Protocol**:
+- After completing every endpoint, screen, migration, bug fix, or milestone, the AI automatically updates:
+  - **`Memory.md`**: Real-time system status, runtime telemetry, and active focus.
   - **`done.md`**: Cumulative checklist of all verified endpoints and components.
   - **`Phases.md`**: Checks off finished roadmap items.
-- You never need to remind the AI to update its memory.
+- You never need to prompt the AI to remember what it just built.
 
 ---
 
-## 8. Maintenance & Updating Skills
+## 9. Maintenance & Updating Skills
 
-All skills run locally in `.agent/skills/` for rock-solid stability and zero breaking changes.
+All skills live directly in `.agent/skills/` for maximum portability, version stability, and zero network breakages.
 
-To update skills in the future, simply ask the AI in chat:
-- **Update UI/UX Pro Max**: Run `npx uipro-cli update`
-- **Update SEO Suite**: Ask AI to pull the latest release from `AgriciDaniel/claude-seo`.
-- **Update Motion**: Run `npm install motion@latest`.
+To update skills in the future:
+- **UI/UX Pro Max**: Run `npx uipro-cli update` or update the Python script datasets.
+- **SEO Suite**: Refresh the sub-skills from `AgriciDaniel/claude-seo`.
+- **Motion**: Upgrade via `npm install motion@latest`.
 
 ---
 
-## ❤️ Support the Developer
+## 10. Support the Developer
 
-If you enjoy using **AgentStack** and would like to support its continued development and open-source releases, you can buy me a coffee!
+If you find **AgentStack** valuable for your workflow and would like to support its ongoing open-source development, you can buy me a coffee!
 
 - **PayPal:** [Donate via PayPal](https://www.paypal.com/paypalme/zubayrop)
 - **NayaPay:** `zubayr@nayapay`

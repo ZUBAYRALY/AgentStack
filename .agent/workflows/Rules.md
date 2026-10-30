@@ -53,26 +53,27 @@ This document establishes the universal, non-negotiable rules and execution boun
 
 ---
 
-## 3. Defensive Security & Vulnerability Prevention Standards
-1. **Injection Prevention (SQL & NoSQL)**:
-   - 100% of database interactions must use parameterized ORM queries (e.g., Prisma, Drizzle, SQLAlchemy).
-   - Never use raw string interpolation or concatenation in database queries.
-2. **Cross-Site Scripting (XSS) Prevention**:
-   - Never use `dangerouslySetInnerHTML` with unsanitized user input.
-   - Ensure all rich-text content is sanitized using strict allow-lists (e.g., DOMPurify) before rendering.
-3. **Broken Access Control & Multi-Tenant Scoping**:
-   - Every read, update, or delete database query must explicitly enforce user or workspace ownership (`where: { id, workspaceId }`).
-   - Never rely solely on client-provided IDs without verifying server-side ownership.
-4. **Security Headers & CORS**:
-   - Enforce secure HTTP headers using Helmet (Content-Security-Policy, X-Frame-Options: DENY, X-Content-Type-Options: nosniff).
-   - Restrict CORS origins strictly to authorized frontend domains.
-5. **SSRF & Private IP Blocking**:
-   - All outgoing scrapers, crawlers, or webhook dispatchers must strictly block private IP ranges (`127.0.0.1`, `localhost`, `10.x`, `192.168.x`, `169.254.x.x`).
-6. **Secret Management & Environment Isolation**:
-   - Never expose API keys, database connection strings, or JWT secrets in client bundles or public commits.
-   - Access credentials strictly through backend environment variables (`.env`).
-7. **Dependency Auditing**:
-   - Keep all installed third-party libraries updated and run `npm audit` to verify zero high or critical CVE vulnerabilities.
+## 3. Universal Security & Boundary Standards
+
+### 3.1 Secrets & Credential Isolation
+- **Zero Secrets in Code**: Never hardcode API keys, database credentials, passwords, or tokens in source code, commits, or client-side bundles.
+- **Web**: Secrets strictly reside in backend `.env` files. Client bundles must never include private tokens (never prefix sensitive keys with `VITE_` or `NEXT_PUBLIC_`).
+- **Python**: Enforce `.env` isolation via `pydantic-settings`. Ensure `.env` is listed in `.gitignore`.
+- **Android**: Never store raw keys in `AndroidManifest.xml` or code. Store in `local.properties` (injected via `BuildConfig`) or retrieve securely from backend.
+
+### 3.2 Injection Shields & Parameterized Queries
+- **Zero Raw SQL String Concatenation**: Every SQL query must use parameterized statements or ORM mapping (Prisma, async SQLAlchemy 2.0, Room DAOs).
+- **Strict Schema Validation**: Validate 100% of external user inputs before processing (Zod for Web, Pydantic v2 for Python, Kotlin type safety for Android).
+
+### 3.3 Network, SSRF & Transport Security
+- **HTTPS & TLS Enforcement**: All network transport must be encrypted (TLS 1.2/1.3).
+- **Android Network Security**: Enforce `android:usesCleartextTraffic="false"` to block unencrypted HTTP traffic.
+- **SSRF Prevention**: External HTTP fetchers (Node `fetch`, Python `httpx`, Android Retrofit) must block calls to private/loopback IP ranges (`127.0.0.1`, `10.0.0.0/8`, `192.168.0.0/16`, `169.254.169.254`).
+
+### 3.4 Data at Rest & Storage Protection
+- **Password Hashing**: Passwords must always be hashed with `bcrypt` or `argon2` with appropriate work factors. Never store plain or MD5/SHA hashes.
+- **Android Storage Security**: Sensitive tokens must use `EncryptedSharedPreferences` or Android Keystore. Plain `SharedPreferences` is forbidden for secrets. Set `android:allowBackup="false"` to prevent unauthorized data extraction.
+- **Tenant & Workspace Isolation**: Every read/write query must enforce tenant/user ownership scoping (`WHERE user_id = :auth_user_id`).
 
 ---
 
@@ -83,6 +84,4 @@ A task, endpoint, or UI component is marked complete **ONLY** when:
 - [x] Backend endpoint validated with schema validation & authorization checks.
 - [x] Real database persistence and centralized error handling confirmed.
 - [x] Zero dummy data / Zero dead buttons.
-- [x] SEO & Metadata verified (Semantic HTML, Title/Description, OpenGraph, Alt tags, Schema markup).
-- [x] Defensive Security verified (No raw SQL, sanitized inputs, tenant-scoped queries, secrets isolated).
 - [x] **[done.md](./done.md)**, **[Memory.md](./Memory.md)**, and **[Phases.md](./Phases.md)** updated automatically.
