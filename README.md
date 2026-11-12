@@ -107,12 +107,9 @@ Instead of generic prompts, hallucinations, or fragile snippets, AgentStack esta
 │       ├── webstack/             # Full-Stack Web (Next.js, React, Node, Express, Prisma)
 │       ├── webstack-backend/     # Web Backend, Validation & Database Mandates
 │       └── webstack-frontend/    # Web Frontend Standards & Component Design
-├── legacy-workflows/             # Classic v1 .md Workflow Files (Preserved for Legacy Setups)
-├── install.bat                   # Windows One-Click GUI Installer (Double-Click)
-├── install.ps1                   # Windows PowerShell Installer (Local & Remote One-Liner)
-├── install.command               # macOS One-Click GUI Installer (Double-Click in Finder)
-├── install.sh                    # macOS / Linux Bash Installer (Local & Remote One-Liner)
-├── install.py                    # Universal Cross-Platform Python Installer (Win/Mac/Linux)
+├── legacy-workflows/             # Classic v1 Stack (Preserved for Legacy Workflow Setups)
+│   ├── skills/                   # Classic 6 Companion Skills (droid, motion, python, seo, ui-ux-pro-max, webstack)
+│   └── workflows/                # Classic 18 .md Workflow Files (project.md, PRD.md, Architecture.md, etc.)
 ├── LICENSE                       # MIT License
 ├── README.md                     # Framework Overview
 └── UserGuide.md                  # Comprehensive Step-by-Step Manual
@@ -120,59 +117,61 @@ Instead of generic prompts, hallucinations, or fragile snippets, AgentStack esta
 
 ---
 
-## 🚀 Quick Start (Windows, macOS & Linux)
+## 🚀 Quick Start (Windows, macOS & Linux Commands)
 
-Install all **25 AgentStack skills** globally (`~/.gemini/config/skills/`) so every project on your machine has instant access without copying files manually.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/ZUBAYRALY/AgentStack.git
+```
 
-### Option 1: One-Line Terminal Install (No Manual Download Needed)
+### 2. Option A: Global Install (Install All 25 Skills Across Every Project)
+
+Run this single command to install all **25 skills** into your global Antigravity configuration (`~/.gemini/config/skills/`) so you never have to copy files manually into individual projects:
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/ZUBAYRALY/AgentStack/main/install.ps1 | iex
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.gemini\config\skills" | Out-Null; Copy-Item -Recurse -Force "AgentStack\.agent\skills\*" "$env:USERPROFILE\.gemini\config\skills\"
 ```
 
 **macOS & Linux (Terminal):**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ZUBAYRALY/AgentStack/main/install.sh | bash
+mkdir -p ~/.gemini/config/skills && cp -R AgentStack/.agent/skills/* ~/.gemini/config/skills/
 ```
 
 ---
 
-### Option 2: One-Click GUI / Local Install (After Cloning or Downloading ZIP)
+### 3. Option B: Project-Specific Install (Drop into Any Project)
 
+Copy the `.agent/` folder directly into your project root:
+
+**Windows (PowerShell):**
+```powershell
+Copy-Item -Recurse -Force "AgentStack\.agent" "D:\Path\To\YourProject\"
+```
+
+**macOS & Linux (Terminal):**
 ```bash
-git clone https://github.com/ZUBAYRALY/AgentStack.git
-cd AgentStack
+cp -R AgentStack/.agent /path/to/your-project/
 ```
-
-| Operating System | 1-Click GUI Method | Terminal Command |
-| :--- | :--- | :--- |
-| **Windows** | Double-click **`install.bat`** | `.\install.ps1` or `python install.py` |
-| **macOS** | Double-click **`install.command`** | `bash install.sh` or `python3 install.py` |
-| **Linux** | Run in Terminal | `bash install.sh` or `python3 install.py` |
 
 ---
 
-### Option 3: Install into a Specific Project Workspace
+### 4. Option C: Legacy Workflows Setup (`legacy-workflows/`)
 
-- **Windows:** Drag and drop your project folder onto **`install.bat`**, or run:
-  ```powershell
-  .\install.ps1 -TargetProject "D:\Projects\MyNewApp"
-  ```
-- **macOS / Linux:**
-  ```bash
-  bash install.sh /path/to/your-project
-  ```
-- **Universal Python (Any OS):**
-  ```bash
-  python install.py /path/to/your-project
-  ```
+If you want the classic v1 `.agent/workflows/*.md` + `.agent/skills/` structure, copy from the **[legacy-workflows/](legacy-workflows/)** folder:
 
-### Launch Your Coding Agent
+**Windows (PowerShell):**
+```powershell
+New-Item -ItemType Directory -Force "D:\Path\To\YourProject\.agent" | Out-Null; Copy-Item -Recurse -Force "AgentStack\legacy-workflows\*" "D:\Path\To\YourProject\.agent\"
+```
+
+**macOS & Linux (Terminal):**
+```bash
+mkdir -p /path/to/your-project/.agent && cp -R AgentStack/legacy-workflows/* /path/to/your-project/.agent/
+```
+
+### 5. Launch Your Coding Agent
 Open any project in **Google Antigravity IDE**, **Claude Code**, or **Cursor** and use `/project`, `/droid`, `/webstack`, `/python`, `/human-writing`, etc.
-
-### Need the Old Workflow Files? (`legacy-workflows/`)
-All 18 classic `.md` workflow files from v1 are preserved inside the **[legacy-workflows/](legacy-workflows/)** folder. If you need the old `.agent/workflows/*.md` setup for backward compatibility, you can download or copy them directly from `legacy-workflows/`.
 
 ---
 

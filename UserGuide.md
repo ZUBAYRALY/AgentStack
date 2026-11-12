@@ -37,45 +37,49 @@ Welcome to the **AgentStack** comprehensive user guide. This document details ho
 
 ## 2. Installation & Setup
 
-### Option A: One-Line Remote Install (Windows, macOS, Linux)
-Run a single command in your terminal on a fresh machine to download and install all **25 skills** globally:
+### 1. Clone the Repository
+```bash
+git clone https://github.com/ZUBAYRALY/AgentStack.git
+```
+
+### Option A: Global Command Install (Windows, macOS, Linux)
+Run a single command to install all **25 skills** into your global Antigravity config (`~/.gemini/config/skills/`) so they work across every project automatically:
 
 ```powershell
 # Windows (PowerShell)
-irm https://raw.githubusercontent.com/ZUBAYRALY/AgentStack/main/install.ps1 | iex
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.gemini\config\skills" | Out-Null; Copy-Item -Recurse -Force "AgentStack\.agent\skills\*" "$env:USERPROFILE\.gemini\config\skills\"
 ```
 
 ```bash
 # macOS & Linux (Bash / Zsh)
-curl -fsSL https://raw.githubusercontent.com/ZUBAYRALY/AgentStack/main/install.sh | bash
+mkdir -p ~/.gemini/config/skills && cp -R AgentStack/.agent/skills/* ~/.gemini/config/skills/
 ```
 
-### Option B: One-Click Local Install (From Downloaded Repo)
-1. Clone or download the **AgentStack** repository.
-2. Run the installer for your OS:
-   - **Windows (GUI):** Double-click **`install.bat`**
-   - **Windows (PowerShell):** `.\install.ps1`
-   - **macOS (GUI):** Double-click **`install.command`**
-   - **macOS / Linux (Terminal):** `bash install.sh`
-   - **Universal Python (Any OS):** `python install.py` (or `python3 install.py`)
-3. All **25 skills** are installed into `~/.gemini/config/skills/` (`%USERPROFILE%\.gemini\config\skills\` on Windows) and work across every project automatically.
+### Option B: Install into a Specific Project Workspace
+Copy the `.agent/` directory into your project root:
 
-### Option C: Install into a Specific Project Workspace
-1. Drag and drop your project folder onto **`install.bat`** (Windows), or run:
-   ```powershell
-   # Windows PowerShell
-   .\install.ps1 -TargetProject "D:\Path\To\MyProject"
+```powershell
+# Windows (PowerShell)
+Copy-Item -Recurse -Force "AgentStack\.agent" "D:\Path\To\MyProject\"
+```
 
-   # macOS / Linux
-   bash install.sh /path/to/my-project
+```bash
+# macOS & Linux
+cp -R AgentStack/.agent /path/to/my-project/
+```
 
-   # Universal Python (Windows / macOS / Linux)
-   python install.py /path/to/my-project
-   ```
-2. Open the directory in **Google Antigravity IDE**, **Claude Code**, or **Cursor**.
+### Option C: Using Legacy Workflows (`legacy-workflows/`)
+If you prefer the classic `.agent/workflows/*.md` + `.agent/skills/` structure from AgentStack v1, the complete v1 stack is preserved inside the **`legacy-workflows/`** directory:
 
-### Option D: Using Legacy Workflows (`legacy-workflows/`)
-If you prefer the classic `.agent/workflows/*.md` file structure from AgentStack v1, all 18 original workflow `.md` files are preserved inside the **`legacy-workflows/`** directory at the repository root. Copy them into `<your-project>/.agent/workflows/` whenever needed.
+```powershell
+# Windows (PowerShell)
+New-Item -ItemType Directory -Force "D:\Path\To\MyProject\.agent" | Out-Null; Copy-Item -Recurse -Force "AgentStack\legacy-workflows\*" "D:\Path\To\MyProject\.agent\"
+```
+
+```bash
+# macOS & Linux
+mkdir -p /path/to/my-project/.agent && cp -R AgentStack/legacy-workflows/* /path/to/my-project/.agent/
+```
 
 ---
 
