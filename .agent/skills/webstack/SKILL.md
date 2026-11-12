@@ -19,18 +19,18 @@ This skill provides comprehensive full-stack web engineering intelligence for bu
 
 ## 🧭 Workspace Integration & Synchronization
 
-When working within an active project, this skill synchronizes with the workspace workflows:
-- 📖 **Master Protocol**: `[webstack.md](../../workflows/webstack.md)`
-- 🎨 **Frontend Protocol**: `[webstack-frontend.md](../../workflows/webstack-frontend.md)`
-- ⚙️ **Backend Protocol**: `[webstack-backend.md](../../workflows/webstack-backend.md)`
-- 🚀 **Project Onboarding**: `[project.md](../../workflows/project.md)`
-- 📄 **Requirements**: `[PRD.md](../../workflows/PRD.md)`
-- 🏗️ **Architecture**: `[Architecture.md](../../workflows/Architecture.md)`
-- 📜 **Strict Rules**: `[Rules.md](../../workflows/Rules.md)`
-- 🗺️ **Roadmap**: `[Phases.md](../../workflows/Phases.md)`
-- 🎨 **Design System**: `[Design.md](../../workflows/Design.md)`
-- 🧠 **Memory & State**: `[Memory.md](../../workflows/Memory.md)`
-- ✅ **Audit Log**: `[done.md](../../workflows/done.md)`
+When working within an active project, this skill synchronizes with the workspace skills:
+- 📖 **Master Protocol**: `[webstack](SKILL.md)`
+- 🎨 **Frontend Protocol**: `[webstack-frontend](../webstack-frontend/SKILL.md)`
+- ⚙️ **Backend Protocol**: `[webstack-backend](../webstack-backend/SKILL.md)`
+- 🚀 **Project Onboarding**: `[project](../project/SKILL.md)`
+- 📄 **Requirements**: `[prd](../prd/SKILL.md)`
+- 🏗️ **Architecture**: `[architecture](../architecture/SKILL.md)`
+- 📜 **Strict Rules**: `[rules](../rules/SKILL.md)`
+- 🗺️ **Roadmap**: `[phases](../phases/SKILL.md)`
+- 🎨 **Design System**: `[design](../design/SKILL.md)`
+- 🧠 **Memory & State**: `[memory](../memory/SKILL.md)`
+- ✅ **Audit Log**: `[done](../done/SKILL.md)`
 
 ### 🧩 Companion Skills for WebStack
 - 🎨 **[ui-ux-pro-max](../ui-ux-pro-max/SKILL.md)**: Color palettes, UI styles, font pairings, and responsive patterns.

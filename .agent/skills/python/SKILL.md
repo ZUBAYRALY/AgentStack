@@ -19,13 +19,17 @@ This skill provides complete Python engineering intelligence for production-grad
 
 ## 🧭 Workspace Integration & Synchronization
 
-When working within an active project, this skill synchronizes with the workspace workflows:
-- 📖 **Master Protocol**: `[python.md](../../workflows/python.md)`
-- ⚡ **API & Schema Standards**: `[python-api.md](../../workflows/python-api.md)`
-- 🏛️ **Architecture & Data**: `[python-architecture.md](../../workflows/python-architecture.md)`
-- 🧠 **Memory & State**: `[Memory.md](../../workflows/Memory.md)`
-- ✅ **Audit Log**: `[done.md](../../workflows/done.md)`
-- 🗺️ **Roadmap**: `[Phases.md](../../workflows/Phases.md)`
+When working within an active project, this skill synchronizes with the workspace skills:
+- 📖 **Master Protocol**: `[python](SKILL.md)`
+- ⚡ **API & Schema Standards**: `[python-api](../python-api/SKILL.md)`
+- 🏛️ **Architecture & Data**: `[python-architecture](../python-architecture/SKILL.md)`
+- 🚀 **Project Onboarding**: `[project](../project/SKILL.md)`
+- 📄 **Requirements**: `[prd](../prd/SKILL.md)`
+- 🏗️ **Architecture**: `[architecture](../architecture/SKILL.md)`
+- 📜 **Strict Rules**: `[rules](../rules/SKILL.md)`
+- 🧠 **Memory & State**: `[memory](../memory/SKILL.md)`
+- ✅ **Audit Log**: `[done](../done/SKILL.md)`
+- 🗺️ **Roadmap**: `[phases](../phases/SKILL.md)`
 
 > ⚡ **Mandatory Execution Rule**: After completing every endpoint, service, database migration, bug fix, or milestone, the AI must automatically update `Memory.md`, `done.md`, and `Phases.md`.
 

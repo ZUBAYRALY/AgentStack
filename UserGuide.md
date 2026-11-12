@@ -37,21 +37,45 @@ Welcome to the **AgentStack** comprehensive user guide. This document details ho
 
 ## 2. Installation & Setup
 
-### For a New Project:
-1. Initialize a new folder or repository for your application.
-2. Copy the `.agent/` folder into your project root:
-   ```bash
-   # Linux/macOS
-   cp -r /path/to/AgentStack/.agent /path/to/my-new-project/
+### Option A: One-Line Remote Install (Windows, macOS, Linux)
+Run a single command in your terminal on a fresh machine to download and install all **25 skills** globally:
 
+```powershell
+# Windows (PowerShell)
+irm https://raw.githubusercontent.com/ZUBAYRALY/AgentStack/main/install.ps1 | iex
+```
+
+```bash
+# macOS & Linux (Bash / Zsh)
+curl -fsSL https://raw.githubusercontent.com/ZUBAYRALY/AgentStack/main/install.sh | bash
+```
+
+### Option B: One-Click Local Install (From Downloaded Repo)
+1. Clone or download the **AgentStack** repository.
+2. Run the installer for your OS:
+   - **Windows (GUI):** Double-click **`install.bat`**
+   - **Windows (PowerShell):** `.\install.ps1`
+   - **macOS (GUI):** Double-click **`install.command`**
+   - **macOS / Linux (Terminal):** `bash install.sh`
+   - **Universal Python (Any OS):** `python install.py` (or `python3 install.py`)
+3. All **25 skills** are installed into `~/.gemini/config/skills/` (`%USERPROFILE%\.gemini\config\skills\` on Windows) and work across every project automatically.
+
+### Option C: Install into a Specific Project Workspace
+1. Drag and drop your project folder onto **`install.bat`** (Windows), or run:
+   ```powershell
    # Windows PowerShell
-   Copy-Item -Recurse -Force AgentStack\.agent \path\to\my-new-project\
-   ```
-3. Open the directory in **Google Antigravity IDE**, **Claude Code**, or **Cursor**.
+   .\install.ps1 -TargetProject "D:\Path\To\MyProject"
 
-### For an Existing Project:
-1. Paste the `.agent/` directory directly into your existing project root.
-2. Follow the [Adopting an Existing Codebase](#4-adopting-an-existing-codebase) workflow below.
+   # macOS / Linux
+   bash install.sh /path/to/my-project
+
+   # Universal Python (Windows / macOS / Linux)
+   python install.py /path/to/my-project
+   ```
+2. Open the directory in **Google Antigravity IDE**, **Claude Code**, or **Cursor**.
+
+### Option D: Using Legacy Workflows (`legacy-workflows/`)
+If you prefer the classic `.agent/workflows/*.md` file structure from AgentStack v1, all 18 original workflow `.md` files are preserved inside the **`legacy-workflows/`** directory at the repository root. Copy them into `<your-project>/.agent/workflows/` whenever needed.
 
 ---
 
@@ -102,15 +126,15 @@ To bring AgentStack into an existing application, simply run `/project` or promp
 
 ---
 
-## 5. Ecosystem Protocols & Workflows
+## 5. Ecosystem Protocols & Skills
 
-AgentStack features specialized, production-hardened workflows for major engineering environments:
+AgentStack features specialized, production-hardened skills for major engineering environments:
 
-### Full-Stack Web (`webstack`)
-- **Governing Workflows**: `webstack.md`, `webstack-frontend.md`, `webstack-backend.md`.
+### Full-Stack Web (`/webstack`)
+- **Governing Skills**: `webstack`, `webstack-frontend`, `webstack-backend`.
 - **Frontend Standards**:
   - React 18+ and Next.js (App Router preferred).
-  - Tailwind CSS with OLED dark and crisp light theme tokens (`Design.md`).
+  - Tailwind CSS with OLED dark and crisp light theme tokens (`design`).
   - Tactile micro-interactions on all interactive elements via `motion/react`.
   - Semantic HTML landmarks (`<main>`, single `<h1>`, `<header>`, `<nav>`).
 - **Backend Standards**:
@@ -119,8 +143,8 @@ AgentStack features specialized, production-hardened workflows for major enginee
   - Strict input validation via Zod schemas.
   - Zero-dummy UI: All screens bind to real backend responses with explicit handling of `Loading`, `Empty`, `Error (with Retry)`, and `Content`.
 
-### Modern Python & FastAPI (`python`)
-- **Governing Workflows**: `python.md`, `python-architecture.md`, `python-api.md`.
+### Modern Python & FastAPI (`/python`)
+- **Governing Skills**: `python`, `python-architecture`, `python-api`.
 - **Async-First Execution**:
   - Python 3.11+ using native `async` / `await` for all database, HTTP, and file I/O.
   - Blocking synchronous calls inside async event loops are strictly prohibited.
@@ -130,8 +154,8 @@ AgentStack features specialized, production-hardened workflows for major enginee
   - **Repositories (`repositories/`)**: Async SQLAlchemy 2.0 database queries and model mapping.
 - **Type Safety**: Full PEP 484 type annotations on all signatures and union types (`str | None`).
 
-### Android & Jetpack Compose (`droid`)
-- **Governing Workflows**: `droid.md`, `droid-architecture.md`, `droid-ui.md`, `baseline-profile.md`.
+### Android & Jetpack Compose (`/droid`)
+- **Governing Skills**: `droid`, `droid-architecture`, `droid-ui`, `baseline-profile`.
 - **Clean Architecture + UDF**:
   - Single immutable `UiState` flows down from ViewModel to Compose screens.
   - Events flow up via typed lambda callbacks (`onEvent: (TaskUiEvent) -> Unit`).
@@ -147,43 +171,52 @@ AgentStack features specialized, production-hardened workflows for major enginee
 
 ---
 
-## 6. The Companion Skills Engine
+## 6. The Companion & Productivity Skills Engine
 
-### UI/UX Pro Max (Design Intelligence)
-Located in `.agent/skills/ui-ux-pro-max/`:
+### UI/UX Pro Max (`/ui-ux-pro-max`)
+Located in `.agent/skills/ui-ux-pro-max/` (powered by **[nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**):
 - **67+ Curated UI Styles** (Minimal, Clean Dark, Glassmorphism, Brutalism, Flat, Modern SaaS).
 - **96 Accessible Color Palettes** with WCAG contrast verification.
-- **57 Google Font Pairings** tailored to SaaS, Fintech, E-Commerce, DevTools, and Mobile.
+- **57 Google Font Pairings** tailored to SaaS, Fintech, E-Commerce, DevTools, and Mobile (`jetpack-compose` stack included).
 - **Search CLI**:
   ```bash
   python .agent/skills/ui-ux-pro-max/scripts/search.py "<domain> <industry> <keywords>" --design-system
   ```
 
-### Motion (Tactile Micro-Interactions)
-Located in `.agent/skills/motion/`:
-- Powered by `motion/react` (Motion 12).
+### Motion (`/motion`)
+Located in `.agent/skills/motion/` (powered by **[motiondivision/motion](https://github.com/motiondivision/motion)** — `motion/react`):
 - **Spring Feedback**: Tactile physics on all interactive elements (`whileHover={{ scale: 1.02 }}`, `whileTap={{ scale: 0.98 }}`).
 - **Exit Orchestration**: Smooth modal, drawer, and notification exit transitions via `<AnimatePresence>`.
 - **Layout Morphing**: Sliding indicators and tabs with `layoutId`.
 - **Accessibility**: Strict compliance with `prefers-reduced-motion`.
 
-### Claude-SEO (Technical SEO & AEO)
-Located in `.agent/skills/seo/`:
+### Technical SEO & GEO (`/seo`)
+Located in `.agent/skills/seo/` (powered by **[AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo)**):
 - Comprehensive suite with **24 specialized sub-skills**.
 - **Automated Schema Generation**: WebSite, Organization, Article, BreadcrumbList, and Product JSON-LD structured data.
 - **Core Web Vitals**: Image dimension constraints and layout shift (CLS) prevention.
 - **GEO / AI Engine Optimization**: Structured markup designed for Google AI Overviews, ChatGPT Search, and Perplexity discovery.
 
+### Natural Human Writing (`/human-writing`)
+Located in `.agent/skills/human-writing/`:
+- Eliminates robotic AI clichés, filler openings, trailing fake analysis, inflated language, and em dashes.
+- Adapts naturally to technical documentation, WhatsApp/chat replies, emails, product copy, and text rewrites.
+
+### Freelancing, Code Migration & Release Automation
+- **`/freelancing` (`.agent/skills/freelancing/`)**: Profile optimizer and high-converting proposal generator for Upwork, Fiverr, and Behance.
+- **`/exonalgos` (`.agent/skills/exonalgos/`)**: Intelligent component and feature adaptation protocol for migrating code across repositories.
+- **`/github-release` (`.agent/skills/github-release/`)**: Closed-source Android APK release packager with proprietary EULA licensing.
+
 ---
 
 ## 7. Defensive Security by Design
 
-Governed by `Rules.md`, `webstack-backend.md`, and `python-architecture.md`:
+Governed by `rules`, `webstack-backend`, `droid-architecture`, and `python-architecture`:
 - **Injection Defense**: 100% Parameterized queries across Prisma, SQLAlchemy, and Room. String interpolation in queries is strictly prohibited.
 - **Cross-Site Scripting (XSS)**: Direct assignment to `dangerouslySetInnerHTML` is prohibited unless sanitized with DOMPurify.
 - **Authorization & Multi-Tenancy**: Every data mutation verifies tenant and user ownership (`where: { id, tenantId }`).
 - **HTTP Hardening**: Content Security Policy (CSP), rate limiting, and private IP range blocking against SSRF attacks.
-- **Secret Isolation**: Zero hardcoded secrets; environment variables reside strictly in backend `.env` files.
+- **Secret Isolation**: Zero hardcoded secrets; environment variables reside strictly in backend `.env` files or encrypted mobile storage (`EncryptedSharedPreferences`).
 
 ---
 
@@ -191,9 +224,9 @@ Governed by `Rules.md`, `webstack-backend.md`, and `python-architecture.md`:
 
 AgentStack runs on the **Automatic Sync Protocol**:
 - After completing every endpoint, screen, migration, bug fix, or milestone, the AI automatically updates:
-  - **`Memory.md`**: Real-time system status, runtime telemetry, and active focus.
-  - **`done.md`**: Cumulative checklist of all verified endpoints and components.
-  - **`Phases.md`**: Checks off finished roadmap items.
+  - **`memory` (`Memory.md`)**: Real-time system status, runtime telemetry, and active focus.
+  - **`done` (`done.md`)**: Cumulative checklist of all verified endpoints and components.
+  - **`phases` (`Phases.md`)**: Checks off finished roadmap items.
 - You never need to prompt the AI to remember what it just built.
 
 ---

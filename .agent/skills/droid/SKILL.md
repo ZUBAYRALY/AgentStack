@@ -19,14 +19,19 @@ This skill provides end-to-end Android engineering intelligence for production-r
 
 ## 🧭 Workspace Integration & Synchronization
 
-When working within an active project, this skill synchronizes with the workspace workflows:
-- 📖 **Master Protocol**: `[droid.md](../../workflows/droid.md)`
-- 🎨 **Compose & UI Standards**: `[droid-ui.md](../../workflows/droid-ui.md)`
-- 🏛️ **Architecture & Data**: `[droid-architecture.md](../../workflows/droid-architecture.md)`
-- ⚡ **Baseline Profile Setup**: `[baseline-profile.md](../../workflows/baseline-profile.md)`
-- 🧠 **Memory & State**: `[Memory.md](../../workflows/Memory.md)`
-- ✅ **Audit Log**: `[done.md](../../workflows/done.md)`
-- 🗺️ **Roadmap**: `[Phases.md](../../workflows/Phases.md)`
+When working within an active project, this skill synchronizes with the workspace skills:
+- 📖 **Master Protocol**: `[droid](SKILL.md)`
+- 🎨 **Compose & UI Standards**: `[droid-ui](../droid-ui/SKILL.md)`
+- 🏛️ **Architecture & Data**: `[droid-architecture](../droid-architecture/SKILL.md)`
+- ⚡ **Baseline Profile Setup**: `[baseline-profile](../baseline-profile/SKILL.md)`
+- 🚀 **Project Onboarding**: `[project](../project/SKILL.md)`
+- 📄 **Requirements**: `[prd](../prd/SKILL.md)`
+- 🏗️ **Architecture**: `[architecture](../architecture/SKILL.md)`
+- 📜 **Strict Rules**: `[rules](../rules/SKILL.md)`
+- 🎨 **Design System**: `[design](../design/SKILL.md)`
+- 🧠 **Memory & State**: `[memory](../memory/SKILL.md)`
+- ✅ **Audit Log**: `[done](../done/SKILL.md)`
+- 🗺️ **Roadmap**: `[phases](../phases/SKILL.md)`
 
 ### 🧩 Companion Skills for Android
 - 🎨 **[ui-ux-pro-max](../ui-ux-pro-max/SKILL.md)**: Jetpack Compose stack dataset (`jetpack-compose.csv`), Material 3 design tokens, typography scale, and layout guidelines.
@@ -275,7 +280,7 @@ class TaskRepositoryImpl @Inject constructor(
 ## 🚀 Performance Benchmarking (Baseline Profile)
 
 For optimal Android app startup speed (up to 30-40% faster) and stutter-free scroll performance:
-1. Ensure the `:baselineprofile` test module exists as documented in `[baseline-profile.md](../../workflows/baseline-profile.md)`.
+1. Ensure the `:baselineprofile` test module exists as documented in `[baseline-profile](../baseline-profile/SKILL.md)`.
 2. Generate baseline profiles using `./gradlew :app:generateBaselineProfile`.
 3. Check `Macrobenchmark` startup and scroll metrics before and after changes.
 

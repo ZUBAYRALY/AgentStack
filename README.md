@@ -47,19 +47,20 @@ Instead of generic prompts, hallucinations, or fragile snippets, AgentStack esta
 - **Zero-Jank Budget**: 60-120fps smooth performance, stable keys in `LazyColumn`, lifecycle-aware state collection (`collectAsStateWithLifecycle`), and Baseline Profiles.
 
 ### 5. 🎯 UI/UX Design Intelligence (`ui-ux-pro-max`)
+- Integrated with **[nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**.
 - **67+ UI Styles**: Minimal, Clean Dark, Glassmorphism, Brutalism, Neo-Brutalism, Modern SaaS.
 - **96+ Accessible Color Palettes**: Contrast-compliant tokens for light and OLED dark modes.
-- **57+ Google Font Pairings**: Curated typography scales across different industry verticals.
+- **57+ Google Font Pairings**: Curated typography scales across 13 tech stacks (including `nextjs`, `react`, `html-tailwind`, and `jetpack-compose`).
 - **CLI Query Engine**: Integrated Python search CLI for automated design token lookup.
 
 ### 6. 🪄 Tactile Spring Micro-Interactions (`motion`)
-- Powered by `motion/react` (Motion 12).
+- Powered by **[motiondivision/motion](https://github.com/motiondivision/motion)** (`motion/react` — Motion v12).
 - **Spring Physics**: Natural tactile feedback on clickables (`whileHover={{ scale: 1.02 }}`, `whileTap={{ scale: 0.98 }}`).
 - **Smooth Exits**: Modal, toast, and drawer exit animations orchestrated via `<AnimatePresence>`.
 - **Layout Morphing**: Sliding indicators and tabs with `layoutId` and full `prefers-reduced-motion` compliance.
 
 ### 7. 🔍 Universal Technical SEO & AEO (`seo`)
-- Powered by the Claude-SEO engine with **24 specialized sub-skills**.
+- Powered by **[AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo)** with **24 specialized sub-skills**.
 - **Automated Validation**: Semantic HTML enforcement, single `<h1>`, Schema.org JSON-LD generation, XML sitemaps, OpenGraph metadata, and Core Web Vitals optimization.
 - **AI Search Ready (GEO/AEO)**: Optimized for AI Overviews, ChatGPT Search, and Perplexity retrieval.
 
@@ -69,9 +70,9 @@ Instead of generic prompts, hallucinations, or fragile snippets, AgentStack esta
 - **XSS & SSRF Hardening**: Raw innerHTML strictly prohibited; crawlers restricted from private IP spaces.
 
 ### 9. 🧠 Immortal Persistent Memory
-- **[Memory.md](.agent/workflows/Memory.md)**: Real-time active focus, server ports, and runtime context.
-- **[done.md](.agent/workflows/done.md)**: Cumulative, immutable audit log of verified endpoints, models, and UI views.
-- **[Phases.md](.agent/workflows/Phases.md)**: Structured 7-phase build checklist updated automatically upon task completion.
+- **[memory](.agent/skills/memory/SKILL.md)**: Real-time active focus, server ports, and runtime context.
+- **[done](.agent/skills/done/SKILL.md)**: Cumulative, immutable audit log of verified endpoints, models, and UI views.
+- **[phases](.agent/skills/phases/SKILL.md)**: Structured 7-phase build checklist updated automatically upon task completion.
 
 ---
 
@@ -80,32 +81,38 @@ Instead of generic prompts, hallucinations, or fragile snippets, AgentStack esta
 ```
 .
 ├── .agent/
-│   ├── skills/
-│   │   ├── droid/                # Expert Android (Jetpack Compose, M3, Room, Hilt)
-│   │   ├── motion/               # Tactile Micro-Interactions (Springs, Gestures, Exits)
-│   │   ├── python/               # Modern Python (FastAPI, AsyncIO, SQLAlchemy 2.0)
-│   │   ├── seo/                  # Technical SEO Suite (24 Sub-skills, Schemas, GEO)
-│   │   ├── ui-ux-pro-max/        # Design Intelligence (67+ Styles, 96 Palettes, Fonts)
-│   │   └── webstack/             # Full-Stack Web (Next.js, React, Node, Express, Prisma)
-│   └── workflows/
-│       ├── project.md            # /project Gated Ideation & Adoption Protocol
-│       ├── webstack.md           # Master Full-Stack Protocol
-│       ├── webstack-frontend.md  # Web Frontend Standards & Component Design
-│       ├── webstack-backend.md   # Web Backend, Validation & Database Mandates
-│       ├── python.md             # Python Master Protocol
-│       ├── python-architecture.md# Python Clean Layered Architecture
-│       ├── python-api.md         # FastAPI Endpoints & Pydantic Serialization
-│       ├── droid.md              # Android Master Protocol & Performance Budgets
-│       ├── droid-architecture.md # Android Clean Architecture, MVVM/MVI, Room, Hilt
-│       ├── droid-ui.md           # Jetpack Compose UI & Material 3 Guidelines
-│       ├── baseline-profile.md   # Baseline Profiles & Benchmark Optimization
-│       ├── Rules.md              # Universal Non-Negotiable Boundaries
-│       ├── Architecture.md       # Full-Stack System Flow & Directory Layout
-│       ├── Design.md             # OLED Dark & Light Theme System Tokens
-│       ├── PRD.md                # Modular Product Requirements Document
-│       ├── Phases.md             # 7-Phase Development Roadmap
-│       ├── Memory.md             # Real-Time Context & Runtime Tracker
-│       └── done.md               # Cumulative Completed Tasks Audit Log
+│   └── skills/                   # 25 Autonomous Skills & Project Trackers
+│       ├── architecture/         # Full-Stack System Flow & Directory Layout
+│       ├── baseline-profile/     # Android Baseline Profiles & Benchmark Optimization
+│       ├── design/               # OLED Dark & Light Theme System Tokens
+│       ├── done/                 # Cumulative Completed Tasks Audit Log
+│       ├── droid/                # Expert Android (Jetpack Compose, M3, Room, Hilt)
+│       ├── droid-architecture/   # Android Clean Architecture, MVVM/MVI, Room, Hilt
+│       ├── droid-ui/             # Jetpack Compose UI & Material 3 Guidelines
+│       ├── exonalgos/            # Reference Codebase Migration & Adaptation
+│       ├── freelancing/          # Upwork/Fiverr Profile & Proposal Generator
+│       ├── github-release/       # Closed-Source Android APK Release & EULA Protocol
+│       ├── human-writing/        # Natural Human Communication & Anti-Cliché Protocol
+│       ├── memory/               # Real-Time Context & Runtime Tracker
+│       ├── motion/               # Tactile Micro-Interactions (Springs, Gestures, Exits)
+│       ├── phases/               # 7-Phase Development Roadmap
+│       ├── prd/                  # Modular Product Requirements Document
+│       ├── project/              # /project Gated Ideation & Adoption Protocol
+│       ├── python/               # Modern Python (FastAPI, AsyncIO, SQLAlchemy 2.0)
+│       ├── python-api/           # FastAPI Endpoints & Pydantic Serialization
+│       ├── python-architecture/  # Python Clean Layered Architecture
+│       ├── rules/                # Universal Non-Negotiable Boundaries
+│       ├── seo/                  # Technical SEO Suite (24 Sub-skills, Schemas, GEO)
+│       ├── ui-ux-pro-max/        # Design Intelligence (67+ Styles, 96 Palettes, Fonts)
+│       ├── webstack/             # Full-Stack Web (Next.js, React, Node, Express, Prisma)
+│       ├── webstack-backend/     # Web Backend, Validation & Database Mandates
+│       └── webstack-frontend/    # Web Frontend Standards & Component Design
+├── legacy-workflows/             # Classic v1 .md Workflow Files (Preserved for Legacy Setups)
+├── install.bat                   # Windows One-Click GUI Installer (Double-Click)
+├── install.ps1                   # Windows PowerShell Installer (Local & Remote One-Liner)
+├── install.command               # macOS One-Click GUI Installer (Double-Click in Finder)
+├── install.sh                    # macOS / Linux Bash Installer (Local & Remote One-Liner)
+├── install.py                    # Universal Cross-Platform Python Installer (Win/Mac/Linux)
 ├── LICENSE                       # MIT License
 ├── README.md                     # Framework Overview
 └── UserGuide.md                  # Comprehensive Step-by-Step Manual
@@ -113,25 +120,59 @@ Instead of generic prompts, hallucinations, or fragile snippets, AgentStack esta
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Windows, macOS & Linux)
 
-### 1. Clone or Download
+Install all **25 AgentStack skills** globally (`~/.gemini/config/skills/`) so every project on your machine has instant access without copying files manually.
+
+### Option 1: One-Line Terminal Install (No Manual Download Needed)
+
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/ZUBAYRALY/AgentStack/main/install.ps1 | iex
+```
+
+**macOS & Linux (Terminal):**
+```bash
+curl -fsSL https://raw.githubusercontent.com/ZUBAYRALY/AgentStack/main/install.sh | bash
+```
+
+---
+
+### Option 2: One-Click GUI / Local Install (After Cloning or Downloading ZIP)
+
 ```bash
 git clone https://github.com/ZUBAYRALY/AgentStack.git
+cd AgentStack
 ```
 
-### 2. Drop into Any Project
-Copy the `.agent/` folder into your project root:
-```bash
-# Linux/macOS
-cp -r AgentStack/.agent /path/to/your-project/
+| Operating System | 1-Click GUI Method | Terminal Command |
+| :--- | :--- | :--- |
+| **Windows** | Double-click **`install.bat`** | `.\install.ps1` or `python install.py` |
+| **macOS** | Double-click **`install.command`** | `bash install.sh` or `python3 install.py` |
+| **Linux** | Run in Terminal | `bash install.sh` or `python3 install.py` |
 
-# Windows PowerShell
-Copy-Item -Recurse -Force AgentStack\.agent \path\to\your-project\
-```
+---
 
-### 3. Launch Your Coding Agent
-Open the project in **Google Antigravity IDE**, **Claude Code**, or **Cursor**.
+### Option 3: Install into a Specific Project Workspace
+
+- **Windows:** Drag and drop your project folder onto **`install.bat`**, or run:
+  ```powershell
+  .\install.ps1 -TargetProject "D:\Projects\MyNewApp"
+  ```
+- **macOS / Linux:**
+  ```bash
+  bash install.sh /path/to/your-project
+  ```
+- **Universal Python (Any OS):**
+  ```bash
+  python install.py /path/to/your-project
+  ```
+
+### Launch Your Coding Agent
+Open any project in **Google Antigravity IDE**, **Claude Code**, or **Cursor** and use `/project`, `/droid`, `/webstack`, `/python`, `/human-writing`, etc.
+
+### Need the Old Workflow Files? (`legacy-workflows/`)
+All 18 classic `.md` workflow files from v1 are preserved inside the **[legacy-workflows/](legacy-workflows/)** folder. If you need the old `.agent/workflows/*.md` setup for backward compatibility, you can download or copy them directly from `legacy-workflows/`.
 
 ---
 
